@@ -1,0 +1,29 @@
+#include<cstdio>
+using namespace std;
+double fac(int n)
+{
+    double sum=1.0;
+    for(int i=2;i<=n;i++)
+    {
+        sum=sum*i;
+    }
+    return sum;
+}
+
+double col(int n,int m)
+{
+    return fac(n)/(fac(n-m)*fac(m));
+}
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    double total=0.0;
+    for (int i=0;i<=n/2;i++)
+    {
+        total=total+col(n-i,i);
+    }
+    printf("%f",total);
+
+}
